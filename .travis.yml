@@ -21,6 +21,7 @@ install:
 
 script:
 - tox
+- mvn clean verify sonar:sonar -Pcoverage -Dsonar.projectKey=myorg_myrepo
 - sonar-scanner
  
 jobs:
