@@ -1,8 +1,8 @@
 dist: trusty
 
-addons:
-  sonarcloud:
-    organization: "wiyiiong" # the key of the org you chose at step #3
+# addons:
+#   sonarcloud:
+#     organization: "wiyiiong" # the key of the org you chose at step #3
 
 language: python
 cache: pip
