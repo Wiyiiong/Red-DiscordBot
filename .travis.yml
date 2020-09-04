@@ -20,7 +20,7 @@ install:
 
 script:
 - tox
-- sonar-scanner -Dsonar.verbose=true -X
+# - sonar-scanner -Dsonar.verbose=true -X
  
 jobs:
   include:
