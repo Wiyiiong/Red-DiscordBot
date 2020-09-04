@@ -1,4 +1,9 @@
 dist: trusty
+
+addons:
+  sonarcloud:
+    organization: "wiyiiong" # the key of the org you chose at step #3
+
 language: python
 cache: pip
 notifications:
@@ -12,10 +17,6 @@ env:
 
 install:
 - pip install --upgrade pip tox
-
-addons:
-  sonarcloud:
-    organization: "wiyiiong" # the key of the org you chose at step #3
 
 script:
 - tox
