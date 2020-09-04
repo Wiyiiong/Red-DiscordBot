@@ -2,10 +2,9 @@ dist: xenial
 
 addons: 
   sonarcloud:
-    organization: wiyiiong # the key of the org you chose at step #3
+    organization: wiyiiong 
     token:
-      secure: •••••••••••••••• # encrypted value of your token 
-
+      secure: •••••••••••••••• 
 language: python
 cache: pip
 notifications:
