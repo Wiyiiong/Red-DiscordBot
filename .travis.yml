@@ -22,7 +22,7 @@ install:
 
 script:
 - tox
-- sonar-scanner -X
+- sonar-scanner
  
 jobs:
   include:
