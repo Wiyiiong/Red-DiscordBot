@@ -4,7 +4,7 @@ addons:
   sonarcloud:
     organization: wiyiiong # the key of the org you chose at step #3
     token:
-      secure: •••••••••••••••• # encrypted value of your token
+      secure: •••••••••••••••• # encrypted value of your token 
 
 language: python
 cache: pip
