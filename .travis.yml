@@ -15,13 +15,21 @@ python:
 env:
   global:
     - PIPENV_IGNORE_VIRTUALENVS=1
-
+    
+before_install:
+  - python --version
+  - pip install -U pip
+  - pip install -U pytest
+  - pip install codecov
+  
 install:
 - pip install --upgrade pip tox
+- pip install ".[test]" 
 
 script:
 - tox
 - sonar-scanner
+- pytest
  
 jobs:
   include:
@@ -47,3 +55,6 @@ jobs:
         on:
           repo: Cog-Creators/Red-DiscordBot
           tags: true
+ 
+ after_success:
+  - codecov
