@@ -13,9 +13,16 @@ env:
 install:
 - pip install --upgrade pip tox
 
+addons:
+  sonarcloud:
+    organization: "wiyiiong" # the key of the org you chose at step #3
+    token:
+      secure: SONAR_TOKEN # encrypted value of your token
+
 script:
 - tox
-
+- sonar-scanner
+ 
 jobs:
   include:
     - env: TOXENV=py
