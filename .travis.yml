@@ -82,8 +82,7 @@ install:
 
 script:
 - tox
-- py.test --cov=tests tests/
-- coverage xml
+- py.test --cov=tests tests/ --cov-report xml:coverage.xml
 - pytest --junitxml=pytest-report.xml
 - sonar-scanner
  
