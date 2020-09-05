@@ -49,6 +49,8 @@
 #           tags: true
 
 dist: xenial
+git: 
+ depth: false
 
 addons: 
   sonarcloud:
