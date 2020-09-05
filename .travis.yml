@@ -84,7 +84,7 @@ install:
 
 script:
 # - tox
-- pytest --cov-report term --cov-report xml:cov.xml --cov=tests tests/
+- pytest --cov-report term --cov-report xml:cov.xml --cov
 - pytest --junitxml=pytest-report.xml
 - sonar-scanner
  
