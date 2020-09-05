@@ -86,6 +86,7 @@ script:
 - coverage erase
 - coverage run
 - coverage xml -i.
+- pytest --junitxml=pytest-report.xml
 - sonar-scanner
  
 jobs:
