@@ -81,32 +81,32 @@ install:
 - pip install pytest-cov
 
 script:
-- tox
+# - tox
 - py.test --cov --cov-append --cov-report xml:/home/travis/build/Wiyiiong/Red-DiscordBot/cov.xml --cov-report term --cov=tests tests/
 - pytest --junitxml=pytest-report.xml
 - sonar-scanner
  
-jobs:
-  include:
-    - env: TOXENV=py
-    - env: TOXENV=docs
-    - env: TOXENV=style
-    - stage: Crowdin Deployment
-      if: tag IS present OR ENV(BUILD_CROWDIN)
-      python: 3.8.1
-      env:
-        - DEPLOYING=true
-        - TOXENV=py38
-      before_deploy:
-      - curl https://artifacts.crowdin.com/repo/GPG-KEY-crowdin | sudo apt-key add -
-      - echo "deb https://artifacts.crowdin.com/repo/deb/ /" | sudo tee -a /etc/apt/sources.list
-      - sudo apt-get update -qq
-      - sudo apt-get install -y crowdin
-      - pip install redgettext==3.1
-      deploy:
-      - provider: script
-        script: make upload_translations
-        skip_cleanup: true
-        on:
-          repo: Cog-Creators/Red-DiscordBot
-          tags: true
+# jobs:
+#   include:
+#     - env: TOXENV=py
+#     - env: TOXENV=docs
+#     - env: TOXENV=style
+#     - stage: Crowdin Deployment
+#       if: tag IS present OR ENV(BUILD_CROWDIN)
+#       python: 3.8.1
+#       env:
+#         - DEPLOYING=true
+#         - TOXENV=py38
+#       before_deploy:
+#       - curl https://artifacts.crowdin.com/repo/GPG-KEY-crowdin | sudo apt-key add -
+#       - echo "deb https://artifacts.crowdin.com/repo/deb/ /" | sudo tee -a /etc/apt/sources.list
+#       - sudo apt-get update -qq
+#       - sudo apt-get install -y crowdin
+#       - pip install redgettext==3.1
+#       deploy:
+#       - provider: script
+#         script: make upload_translations
+#         skip_cleanup: true
+#         on:
+#           repo: Cog-Creators/Red-DiscordBot
+#           tags: true
