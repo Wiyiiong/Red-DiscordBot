@@ -56,7 +56,7 @@ addons:
   sonarcloud:
     organization: wiyiiong   
     token:
-      secure: •••••••••••••••• 
+      secure: ••••••••••••••••
 
 language: python
 
