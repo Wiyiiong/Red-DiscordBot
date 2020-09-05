@@ -82,9 +82,9 @@ install:
 
 script:
 # - tox
-- py.test --cov --cov-append --cov-report xml:/home/travis/build/Wiyiiong/Red-DiscordBot/cov.xml --cov-report term --cov=tests tests/
+- pytest --cov-report term --cov-report xml:cov.xml --cov=tests tests/
 - pytest --junitxml=pytest-report.xml
-- sonar-scanner -Dsonar.scm.provider=git
+- sonar-scanner
  
 # jobs:
 #   include:
