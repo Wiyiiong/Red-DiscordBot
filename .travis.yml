@@ -72,15 +72,7 @@ env:
   global:
     - PIPENV_IGNORE_VIRTUALENVS=1
 
-install:
-- pip install --upgrade pip tox
-- pip install pytest-mock
-- pip install pytest-asyncio
-- pip install -e .
-- pip install ."[tests]"
-- pip install coverage
-- pip install setuptools
-- pip install pytest-cov
+
 
 script:
 # - tox
